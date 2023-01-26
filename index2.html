@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies App</title>
+</head>
+<body>
+    
+    <form action="">
+        <input type="text" id="title" placeholder="title" required>
+        <input type="number" id="rating" placeholder="rating" required>
+        <input type="submit" id="formBtn">
+    </form>
+
+    <ul class="ratings">
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <script>   
+    $('#formBtn').click(function(evt) {
+        evt.preventDefault()
+        const title = $('#title').val()
+        const rating = $('#rating').val()
+        $('.ratings').append(`<li>${title}, rating of ${rating} <button> REMOVE </button></li>`)
+        // $('.ratings').last('li').append('<button> REMOVE </button>')
+        $('button').click(function (evt) {
+        $(evt.target).parent().remove();
+    })
+    })
+    // $('button').click(function (evt) {
+    //     console.log(5 *3);
+    //     $(evt.target).parent().remove();
+    // })
+    </script>
+</body>
+</html>
